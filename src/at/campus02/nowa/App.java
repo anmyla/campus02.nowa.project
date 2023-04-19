@@ -47,6 +47,8 @@ public class App {
         //TODO: Benutzereingaben verarbeiten
 
         switch (figureNr) {
+            case 0:
+                isExit();
             case 1:
                 figure = new FigureH();
                 break;
@@ -65,7 +67,6 @@ public class App {
             case 6:
                 figure = new FigureMinus();
                 break;
-
             default:
                 break;
         }
@@ -82,13 +83,20 @@ public class App {
         // Hier sehen Sie ein Pattern für Benutzereingaben
         // Solange kein gültiger Wert eingegeben wurde, wird die Eingabe wiederholt
         do {
-            output.println("Welche Grafik möchten Sie anzeigen (1-6)");
+            output.println("Enter a number from 1-6 to show your graphic or 0 to exit");
             figureNr = input.nextInt();
-            if (figureNr < 1 || figureNr > 6) {
-                output.println("Dies ist keine gültige Grafik!");
+            if (figureNr < 0 || figureNr > 6) {
+                output.println("Not a valid input");
             } else {
                 break;
             }
         } while (true);
+    }
+
+    private boolean isExit() {
+        if (figureNr == 0) {
+            return this.exit = true;
+        }
+        return this.exit = false;
     }
 }

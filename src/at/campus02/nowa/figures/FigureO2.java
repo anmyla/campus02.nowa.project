@@ -1,7 +1,9 @@
 package at.campus02.nowa.figures;
 
 public class FigureO2 extends Figure {
-    public FigureO2() {
+    public FigureO2(int size) {
+        this.size = size;
+
         symbol[0][0] = ' ';
         symbol[1][0] = 'X';
         symbol[2][0] = ' ';
@@ -13,5 +15,7 @@ public class FigureO2 extends Figure {
         symbol[0][2] = ' ';
         symbol[1][2] = 'X';
         symbol[2][2] = ' ';
+
+
     }
 }

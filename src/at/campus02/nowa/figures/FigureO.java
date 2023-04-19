@@ -1,7 +1,10 @@
 package at.campus02.nowa.figures;
 
+import at.campus02.nowa.App;
+
 public class FigureO extends Figure {
-    public FigureO() {
+    public FigureO(int size) {
+        this.size = size;
         symbol[0][0] = 'X';
         symbol[1][0] = 'X';
         symbol[2][0] = 'X';
@@ -13,5 +16,7 @@ public class FigureO extends Figure {
         symbol[0][2] = 'X';
         symbol[1][2] = 'X';
         symbol[2][2] = 'X';
+
+
     }
 }

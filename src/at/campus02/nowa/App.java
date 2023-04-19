@@ -2,8 +2,10 @@ package at.campus02.nowa;
 
 import at.campus02.nowa.figures.*;
 
-import java.io.PrintStream;
 import java.util.Scanner;
+
+import java.io.PrintStream;
+
 
 public class App {
     private final Scanner input;
@@ -15,7 +17,7 @@ public class App {
     // Konstruktor
     // input wird verwendet um Daten vom Benutzer einzulesen (verwendet scanner)
     // output wird verwendet um Text auf der Konsole auszugeben (verwendet sysout)
-    public App(Scanner input, PrintStream output){
+    public App(Scanner input, PrintStream output) {
         this.input = input;
         this.output = output;
     }
@@ -25,7 +27,7 @@ public class App {
         initialize();
         printState();
 
-        while(!exit) {
+        while (!exit) {
             readUserInput();
             updateState();
             printState();
@@ -44,17 +46,34 @@ public class App {
     private void updateState() {
         //TODO: Benutzereingaben verarbeiten
 
-        switch (figureNr){
+        switch (figureNr) {
             case 1:
                 figure = new FigureH();
                 break;
-            default: break;
+            case 2:
+                figure = new FigureL();
+                break;
+            case 3:
+                figure = new FigureO();
+                break;
+            case 4:
+                figure = new FigureO2();
+                break;
+            case 5:
+                figure = new FigureI();
+                break;
+            case 6:
+                figure = new FigureMinus();
+                break;
+
+            default:
+                break;
         }
     }
 
     private void printState() {
         //TODO: Ausgabe des aktuellen Zustands
-        if (figure != null){
+        if (figure != null) {
             output.println(figure);
         }
     }

@@ -95,17 +95,12 @@ public class App {
             if (figureNr < 0 || figureNr > 6) {
                 output.println("Not a valid input");
             }
-            break;
+            else {
+                break;
+            }
         } while (true);
     }
 
-
-    private boolean isExit() {
-        if (figureNr == 0) {
-            return this.exit = true;
-        }
-        return this.exit = false;
-    }
 
     public static void printDoubleX() {
         for (int i = 0; i < 6; i++) {
@@ -123,8 +118,18 @@ public class App {
     }
 
     public void inputSize() {
-        output.println("Choose a size: ");
-        size = input.nextInt();
+        do {
+            output.println("Enter a number > 0 to choose a size: ");
+            size = input.nextInt();
+            if (size < 1) {
+                System.out.println("Not a valid size. Enter a number > than 0.");
+            }
+            else {
+                break;
+            }
+        }while (size < 1);
+
+
     }
 
 }

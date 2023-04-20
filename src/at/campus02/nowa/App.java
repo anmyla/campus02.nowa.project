@@ -44,6 +44,8 @@ public class App {
     private void readUserInput() {
         //TODO: Alle Eingaben der Benutzer einlesen
         inputFigure();
+        if(figureNr != 0) {
+        inputSize();}
     }
 
     private void updateState() {
@@ -51,7 +53,9 @@ public class App {
 
         switch (figureNr) {
             case 0:
-                isExit();
+                exit = true;
+                figure = null;
+                break;
             case 1:
                 figure = new FigureH(size);
                 break;
@@ -91,8 +95,6 @@ public class App {
             if (figureNr < 0 || figureNr > 6) {
                 output.println("Not a valid input");
             }
-            output.println("Choose a size: ");
-            size = input.nextInt();
             break;
         } while (true);
     }
@@ -119,4 +121,10 @@ public class App {
             System.out.println();
         }
     }
+
+    public void inputSize() {
+        output.println("Choose a size: ");
+        size = input.nextInt();
+    }
+
 }

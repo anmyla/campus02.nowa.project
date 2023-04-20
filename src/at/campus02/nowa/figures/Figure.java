@@ -4,8 +4,6 @@ public abstract class Figure {
     protected char[][] symbol = new char[3][3];
     protected int size;
 
-
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
